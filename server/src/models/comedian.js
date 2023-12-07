@@ -12,12 +12,13 @@ const ComedianSchema = new mongoose.Schema({
     additional_info : {
         website : String,
         social_media : {
+            youtube : String,
             twitter : String,
             instagram : String
         }
     }
 });
 
-const Comedian = mongoose.model("Comedian", ComedianSchema);
+export const Comedian = mongoose.model("Comedian", ComedianSchema);
 
 

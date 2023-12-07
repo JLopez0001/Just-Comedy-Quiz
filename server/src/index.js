@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import  populateComedians from "./controllers/comedianManager.js";
 
 /* CONFIGURATIONS */
 
@@ -18,5 +19,7 @@ app.use(cors());
 
 const PORT = process.env.PORT || 6001;
 mongoose.connect(process.env.MONGODB_URI).then(() => {
+    populateComedians(); 
+}).then(() => {
     app.listen(PORT, () => console.log(`Server Started on Port: ${PORT}`));
 }).catch((error) => console.log(`Error did not connect: ${error}`));
