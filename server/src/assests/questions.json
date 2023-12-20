@@ -3,17 +3,21 @@
         {
             "id": 1,
             "text": "What style of comedy do you like?" ,
+            "type": "multiple-choice",
             "answers": [
                 "Dark",
+                "Slap Stick",
                 "Clean",
-                "Storytelling",
+                "Story Telling",
                 "Intellectual",
-                "Ventriloquism"
+                "Ventriloquism",
+                "Sketch"
             ]
         },
         {
             "id": 2,
             "text": "Do you have a preference for the gender identity of the comedian?",
+            "type": "single-choice",
             "answers" : [
                 "Male",
                 "Female",
@@ -23,6 +27,7 @@
         {
             "id": 3,
             "text": "Which topics in comedy are you most drawn to?",
+            "type": "multiple-choice",
             "answers": [
                 "Politics",
                 "Controversial",
@@ -35,6 +40,7 @@
         {
             "id": 4,
             "text": "Do you enjoy comedians who engage in crowd work or interact with the audience?",
+            "type": "single-choice",
             "answers": [
                 "Absolutely",
                 "Nah",
@@ -44,6 +50,7 @@
         {
             "id": 5,
             "text": "How do you feel about dark humor?",
+            "type": "single-choice",
             "answers": [
                 "Love it!",
                 "Its okay",
@@ -53,6 +60,7 @@
         {
             "id": 6,
             "text": "Which of these characteristics do you appreciate in a comedian?",
+            "type": "multiple-choice",
             "answers": [
                 "Edgy",
                 "Controversial",
@@ -66,6 +74,7 @@
         {
             "id": 7,
             "text": "Do you prefer comedians who have been in movies or TV shows?",
+            "type": "single-choice",
             "answers": [
                 "For sure",
                 "Not my thing",
@@ -75,6 +84,7 @@
         {
             "id": 8,
             "text": "How do you prefer jokes to be delivered?",
+            "type": "multiple-choice",
             "answers": [
                 "Song",
                 "Through a story",
@@ -84,6 +94,7 @@
         {
             "id": 9,
             "text": "Do you like when comedians do impressions?",
+            "type": "single-choice",
             "answers": [
                 "You bet",
                 "Nah",
@@ -93,6 +104,7 @@
         {
             "id": 10,
             "text": "How important is it that a comedian's material is family-friendly or clean?",
+            "type": "single-choice",
             "answers": [
                 "Very important",
                 " Not important",
@@ -102,6 +114,7 @@
         {
             "id": 11,
             "text": "Do you like when a comedian tells their jokes through a story?",
+            "type": "single-choice",
             "answers": [
                 "Absolutely",
                 "I'll pass",
@@ -110,3 +123,4 @@
         }
     ]
 }
+
