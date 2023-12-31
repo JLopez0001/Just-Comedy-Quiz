@@ -4,6 +4,9 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import  populateComedians from "./controllers/comedianManager.js";
 
+import { questionRouter } from './routes/questions.js';
+import { comedianRouter } from './routes/comedians.js'
+
 /* CONFIGURATIONS */
 
 dotenv.config();
@@ -13,6 +16,11 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+
+
+/* ROUTES */
+app.use("/questions", questionRouter);
+app.use("/comedians", comedianRouter);
 
 
 /* MONGODB CONNECTION */

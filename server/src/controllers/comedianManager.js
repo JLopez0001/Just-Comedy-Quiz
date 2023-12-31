@@ -19,6 +19,9 @@ const addComedian = async (comedianData) => {
 };
 
 
+ // TODO add female clean comic 
+
+
 // DARK COMEDY // 
 
 const shaneGillisData = {
@@ -82,7 +85,7 @@ const msPatData = {
     name: "Ms. Pat",
     gender: "Female",
     comedy_styles: ["sketch", "dark"],
-    characteristics: ["edgy", "controversial", "crowd work", "TV"],
+    characteristics: ["edgy", "controversial", "TV"],
     specials: ["Y'All Wanna Hear Something Crazy"],
     notable_works: ["Rabbit","The PatDown with Ms.Pat","The Ms. Pat Show", "Ms. Pat Settles it ","The Church Of What's Happening Now","The Joe Rogan Experience", "The Breakfast Club", "This Past Weekend"],
     bio: "Declared by The Washington Post as “unforgiving and darkly hilarious,” and The New York Times as “brutally honest and outrageous,” Patricia Williams (aka Ms. Pat) is a comedian, author, radio host, podcaster, and actress who brings a raw, in your face, and hilarious perspective to her work. With an Emmy-nominated multi-cam series based on her own life, an overall deal with BET/Paramount Global, her popular first Netflix hour streaming, and sold-out standup shows nationwide, Ms. Pat is headed for comedy superstardom.",
@@ -120,7 +123,7 @@ const jessicaKirsonData = {
     name: "Jessica Kirson",
     gender: "Female",
     comedy_styles: ["self-deprecating", "dark", "slap stick"],
-    characteristics: ["LGBTQ-friendly", "crowd work", "LGBTQ+", "impressions", "edgy"],
+    characteristics: ["LGBTQ-friendly", "crowd work", "LGBTQ+", "impressions", "edgy", "musical"],
     specials: ["No Material", "Talking to Myself"],
     notable_works: ["The Comedian's Comedian", "Kill Tony", "The Howard Stern Show", "Whiskey Ginger w/ Andrew Santino", "The Joe Rogan Experience", "Your Mom's House", "The Tim Dillon Show"],
     bio:"Jessica Kirson is a powerhouse on stage. She's a hilariously relatable performer of sheer silliness, vulnerability, and ridiculous characters. Her countless comedic character videos have racked up over 200 million views on social media. Her audience is multigenerational, creating an excuse for large groups of friends and families to spend a night out together. In an era where only 10% of all touring comedians are female, Jessica stands out as one of the strongest comedians regardless of gender. As her friend Dave Attell says, 'I'd hate to follow her.'",
@@ -255,7 +258,7 @@ const tomSeguraData = {
 const kevinHartData = {
     name: "Kevin Hart",
     gender: "Male",
-    comedy_styles: ["clean", "high comedy", "dark", "story telling",  "observational", "slap stick"],
+    comedy_styles: ["clean", "high comedy", "story telling",  "observational", "slap stick"],
     characteristics: ["edgy", "self-deprecating", "TV"],
     specials: ["Reality Check", "Zero F**ks Given", "Irresponsible", "What Now?", "Let Me Explain", "Laugh at My Pain", "Seriously Funny"],
     notable_works: ["Oscars Host","The Upside", "Jumanji: The Next Level", "Central Intelligence", "Ride Along", "The Joe Rogan Experience"],
