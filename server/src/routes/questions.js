@@ -16,6 +16,7 @@ router.post("/comedian-quiz", async (req, res) => {
     try {
         const userAnswers = req.body;
         const topComedians = await scoreComedians(userAnswers);
+        console.log(topComedians);
         res.status(200).json({topComedians});
     } catch (error) {
         console.error(error);

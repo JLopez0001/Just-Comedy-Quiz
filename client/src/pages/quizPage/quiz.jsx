@@ -1,12 +1,20 @@
 import React from "react";
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import QuizQuestions from "../../components/quizQuestions";
 import Button from '@mui/material/Button';
+import { useDispatch } from 'react-redux'; 
+import { setTopComedians } from '../../features/topComedianSlice'
+
 
 const QuizPage = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch()
+
     const [questions, setQuestions] = useState([]);
     const [answers, setAnswers] = useState({});
+
 
     useEffect(() => {
         const fetchQuestionsData = async () => {
@@ -20,6 +28,7 @@ const QuizPage = () => {
         fetchQuestionsData();
     }, []);
 
+
     const handleAnswerChange = (questionID, answerChoices) => {
         setAnswers(prevAnswers => ({ ...prevAnswers, [questionID]: answerChoices }));
     };
@@ -30,7 +39,10 @@ const QuizPage = () => {
 
         try {
             const response = await axios.post("http://localhost:3001/questions/comedian-quiz", answers); 
-            console.log(response.data.topComedians);
+            console.log('Response from server:', response.data.topComedians);
+            dispatch(setTopComedians(response.data.topComedians))
+            navigate('/comedians/results');
+           
         } catch (error) {
             console.error(error);
         }
@@ -52,7 +64,11 @@ const QuizPage = () => {
                         />
                     )
                 })}
-                <Button variant="contained" color="primary" type="submit">
+                <Button 
+                    variant="contained" 
+                    color="primary" 
+                    type="submit"
+                >
                     SEE MY RESULTS
                 </Button>
             </form>

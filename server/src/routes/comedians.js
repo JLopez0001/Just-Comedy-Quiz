@@ -2,7 +2,9 @@ import express from "express";
 
 const router = express.Router();
 
-//comedians
+//get top comedian results
+
+
 
 
 
