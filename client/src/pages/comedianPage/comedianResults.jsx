@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from 'react-redux'
+import { useNavigate } from "react-router-dom";
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -10,15 +11,20 @@ import { CardActionArea } from '@mui/material';
 
 const ResultsPage = () => {
 
+    //TODO: Make sure image is centered in card media
+    //TODO: Have results in grid formal hoizontally
+
+    const navigate = useNavigate();
+
     const topComedians = useSelector((state) => state.topComedians.value);
-    console.log(topComedians)   
+    // console.log(topComedians)   
 
     const getImagePath = (name) => {
         if(name === "Ms. Pat") {
-            return `../../images/ms-pat.jpg`;
+            return `../../images/comedianProfileImages/ms-pat.jpg`;
         }
         const imageName = name.toLowerCase().split(' ').join('-');
-        return `../../images/${imageName}.jpg`;
+        return `../../images/comedianProfileImages/${imageName}.jpg`;
     }
 
 
@@ -28,6 +34,10 @@ const ResultsPage = () => {
         }
         return text; 
     }
+
+    const handleCardClick = (comedianName, comedianID) => {
+        navigate(`/comedians/info/${comedianName.replace(/\s+/g, '-')}/${comedianID}`);
+    };
 
     return (
         <div>
@@ -39,8 +49,8 @@ const ResultsPage = () => {
 
                     return (
                         <div>
-                            <Card sx={{ maxWidth: 345, maxHeitht: 100 }}>
-                                <CardActionArea>
+                            <Card sx={{ maxWidth: 345 }}>
+                                <CardActionArea onClick={() => handleCardClick(comedian.name, comedian._id)}>
                                     <CardMedia 
                                         component="img"
                                         height="250"
@@ -56,7 +66,7 @@ const ResultsPage = () => {
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
-                                        <Button size="small" color="primary" href="/comedian-bio">See Full Bio</Button>
+                                        <Button size="small" color="primary" href={`/comedians/info/${comedian.name.replace(/\s+/g, '-')}/${comedian._id}`}>See Full Bio</Button>
                                     </CardActions>
                                 </CardActionArea>
                             </Card>

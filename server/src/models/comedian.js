@@ -7,6 +7,7 @@ const ComedianSchema = new mongoose.Schema({
     comedy_styles: [ String ],
     characteristics: [ String ],
     specials: [ String ],
+    podcasts: [ String ],
     notable_works: [ String ],
     bio : String,
     additional_info : {
