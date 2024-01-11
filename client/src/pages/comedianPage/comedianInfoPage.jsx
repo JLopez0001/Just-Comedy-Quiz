@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Typography from '@mui/material/Typography';
+import Carousel from "../../features/carousel";
 
 
 const ComedianInfo = () => {
@@ -9,7 +10,7 @@ const ComedianInfo = () => {
     const {comedianId} = useParams();
     const [comedian, setComedian] = useState({});
 
-
+    
     useEffect(() => {  
         const getComedian = async () => {
             try {
@@ -31,6 +32,18 @@ const ComedianInfo = () => {
             <Typography variant="h6" component="div" className="">
                 {comedian.bio}
             </Typography>
+
+            <Carousel 
+                podcasts={comedian.podcasts}
+                notableWorks={comedian.notable_works}
+            />
+
+            
+            <div>
+                <Typography variant="h5" component="div" className="">
+                    Social Media & Website
+                </Typography>
+            </div>
         
         </div>
     )
