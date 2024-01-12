@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import HomePage from './pages/homePage/home.jsx';
 import QuizPage from './pages/quizPage/quiz.jsx';
-import ResultsPage from './pages/comedianPage/comedianResults.jsx';
+import ResultsPage from './pages/resultsPage/comedianResults.jsx';
 import ComedianInfo from './pages/comedianPage/comedianInfoPage.jsx';
 
 function App() {

@@ -4,6 +4,8 @@ import "../carousel.css";
 
 const Carousel = ({ podcasts, notableWorks }) => {
 
+    //TODO: have bigger margin between
+
     const getImagePath = (podcastName) => {
         const imageName = podcastName.toLowerCase().split(' ').join('-');
         return `/images/podLogo/${imageName}.jpg`; 
@@ -55,7 +57,7 @@ const Carousel = ({ podcasts, notableWorks }) => {
                 <div className="inner-scroller">
                     {notableWorks && notableWorks.map((work, index) => (
                         <div key={index}>
-                            <Typography variant="body1">
+                            <Typography component="ul"variant="body1">
                                 {work}
                             </Typography>
                         </div>

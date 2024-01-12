@@ -24,7 +24,7 @@ const ResultsPage = () => {
             return `../../images/comedianProfileImages/ms-pat.jpg`;
         }
         const imageName = name.toLowerCase().split(' ').join('-');
-        return `../../images/comedianProfileImages/${imageName}.jpg`;
+        return `/images/comedianProfileImages/${imageName}.jpg`;
     }
 
 
