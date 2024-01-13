@@ -1,0 +1,33 @@
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+   
+  }
+  
+main {
+    flex: 1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* IMAGES BACKGROUND */
+
+.main-background-image {
+    background-image: url("../public/images/backgroundImages/main-stage.jpg");
+    background-size: 91%; /* Adjust the percentage as needed */
+    background-position: center -125px;
+    height: 100vh;
+}
+
+/* Adjust background size for smaller screens
+@media screen and (max-width: 768px) {
+    .main-background-image {
+        background-size: contain;
+    }
+} */
