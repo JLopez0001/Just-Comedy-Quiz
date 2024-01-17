@@ -134,7 +134,7 @@ const scoreComedians = async (userAnswers) => {
     //Sort comedians by score and return top 3
     const topComedians = Array.from(comedianScore)
         .sort((a,b) => b[1] - a[1])
-        // .slice(0, genderPreference === "Female" ? 2 : 3)
+        .slice(0, genderPreference === "Female" ? 2 : 3)
         .map(item => item[0]);
 
 

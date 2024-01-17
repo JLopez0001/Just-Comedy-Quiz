@@ -1,75 +1,71 @@
 import { useState } from 'react';
-import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import Checkbox from '@mui/material/Checkbox';
+import { FormControl, FormControlLabel, RadioGroup, Radio, Checkbox, Typography, Grid } from '@mui/material';
 
-
-const QuizQuestions = ({question, answers, questionID, type, onAnswerChange}) => {
+const QuizQuestions = ({question, answers, questionID, type, onAnswerChange, currentQuestion, totalQuestions}) => {
 
     const [answerChoices, setAnswerChoices] = useState([]);
 
-    const handleSingleChoiceAnswer = (event) => {
-        const answers = [event.target.value];
-        setAnswerChoices(answers);
-        onAnswerChange(questionID, answers);
-    }  
 
-    const handleMultipleChoiceAnswer = (event) => {
-        let answers;
-        if (event.target.checked) {
-            answers = [...answerChoices, event.target.value];
+    const handleAnswerChange = (event, answer) => {
+        let newAnswers;
+        if (type === 'single-choice') {
+            newAnswers = [answer];
         } else {
-            answers = answerChoices.filter(answer => answer !== event.target.value);
+            if (event.target.checked) {
+                // Add the answer if it's checked
+                newAnswers = [...answerChoices, answer];
+            } else {
+                // Remove the answer if it's unchecked
+                newAnswers = answerChoices.filter(a => a !== answer);
+            }
         }
-        setAnswerChoices(answers);
-        onAnswerChange(questionID, answers);
-    }
+        setAnswerChoices(newAnswers);
+        onAnswerChange(questionID, newAnswers);
+    };
 
 
     return (
+        
         <div>
-            <div>
-                <h2>{question}</h2>
-                <FormControl >
-                    {type === "single-choice" ? (
-                        <div>
-                            <RadioGroup
-                                row
-                                aria-label={`answerChoices_${questionID}`}
-                                onChange={handleSingleChoiceAnswer}
-                            >
-                                {answers.map((answer, index) => (
-                                    <FormControlLabel
-                                        key={index}
-                                        value={answer}
-                                        control={<Radio />}
-                                        label={answer}
-                                    />
-                                ))}
-                            </RadioGroup>
-                        </div>
-                    ) : (
-                        <div>
-                            {answers.map((answer, index) => (
-                                <FormControlLabel
-                                    key={index}
-                                    control={
-                                        <Checkbox
-                                            checked={answerChoices.includes(answer)}
-                                            onChange={handleMultipleChoiceAnswer}
-                                            value={answer}
-                                        />
-                                    }
-                                    label={answer}
-                                />
-                            ))}
-                        </div>
-                    )}
-                </FormControl>
+            <div className="question-wrapper">
+                <Typography variant="body1" className="question-number" sx={{fontWeight: "light"}}>
+                    Question {currentQuestion + 1} /{totalQuestions} 
+                </Typography>
+              
+                <Typography variant="h5" className="question-text">
+                    {question}
+                </Typography>
+
+                {type === 'multiple-choice' ? 
+                    <Typography variant="body1"  sx={{fontWeight: "light"}}>(Select all that apply)</Typography> : null}
+
             </div>
-            
+            <FormControl required component="fieldset" fullWidth>
+                <RadioGroup
+                    aria-label={`answerChoices_${questionID}`}
+                    value={type === 'single-choice' ? answerChoices[0] : ''}
+                    row={false}
+                >
+                    <Grid container spacing={3}>
+                        {answers.map((answer, index) => (
+                            <Grid item xs={12} sm={answers.length > 4 ? 6 : 12} key={index} >
+                                <FormControlLabel
+                                    className={`answer-choice ${answerChoices.includes(answer) ? 'selected-answer' : ''}`}
+                                    value={answer}
+                                    control={type === 'single-choice' ? <Radio /> : <Checkbox checked={answerChoices.includes(answer)} />}
+                                    label={
+                                        <Typography variant="h6" >
+                                            {answer}
+                                        </Typography>
+                                    }
+                                    onChange={(e) => handleAnswerChange(e, answer)}
+                                    sx={{m: 'auto'}}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </RadioGroup>
+            </FormControl>
         </div>
     );
 };
