@@ -10,6 +10,7 @@ import { setTopComedians } from '../../features/topComedianSlice'
 import { Paper } from "@mui/material";
 
 const QuizPage = () => {
+    
     const navigate = useNavigate();
     const dispatch = useDispatch()
 
@@ -96,15 +97,15 @@ const QuizPage = () => {
                         />
 
                     <div className="next-button">
-                        {currentQuestionIndex < questions.length - 1 ? (
+                        {/* {currentQuestionIndex < questions.length - 1 ? ( */}
                             <Button variant="contained" disabled={!isAnswerSelected} size="large"  onClick={handleNextQuestion} sx={{bgcolor:"#fd2eb3",'&:hover': {bgcolor: '#ff57c4'}}}>
                                 Next
                             </Button>
-                        ) : (
+                        {/* ) : ( */}
                             <Button variant="contained"  onClick={onSubmit}>
                                 Submit
                             </Button>
-                        )}
+                        {/* )} */}
                     </div>
                     </Paper>
                 </div>

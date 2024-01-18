@@ -8,6 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import Curtain from "../../features/curtain";
 
 const ResultsPage = () => {
 
@@ -15,6 +16,7 @@ const ResultsPage = () => {
     //TODO: Have results in grid formal hoizontally
 
     const navigate = useNavigate();
+
 
     const topComedians = useSelector((state) => state.topComedians.value);
     // console.log(topComedians)   
@@ -39,41 +41,45 @@ const ResultsPage = () => {
         navigate(`/comedians/info/${comedianName.replace(/\s+/g, '-')}/${comedianID}`);
     };
 
+
+
     return (
         <div>
-            <h1>YOUR COMEDY MATCHES</h1>
-            <div>
-                {topComedians.map(comedian => {
+            <Curtain>
+                    <h1>YOUR COMEDY MATCHES</h1>
+                    <div>
+                        {Array.isArray(topComedians) && topComedians.map(comedian => {
 
-                    const imagePath = getImagePath(comedian.name);
+                            const imagePath = getImagePath(comedian.name);
 
-                    return (
-                        <div>
-                            <Card sx={{ maxWidth: 345 }}>
-                                <CardActionArea onClick={() => handleCardClick(comedian.name, comedian._id)}>
-                                    <CardMedia 
-                                        component="img"
-                                        height="250"
-                                        image={imagePath}
-                                        alt={comedian.name}
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            {comedian.name}
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            {limitText(comedian.bio, 250)}
-                                        </Typography>
-                                    </CardContent>
-                                    <CardActions>
-                                        <Button size="small" color="primary" href={`/comedians/info/${comedian.name.replace(/\s+/g, '-')}/${comedian._id}`}>See Full Bio</Button>
-                                    </CardActions>
-                                </CardActionArea>
-                            </Card>
-                        </div>   
-                    )
-                })}
-            </div>
+                            return (
+                                <div>
+                                    <Card sx={{ maxWidth: 345 }}>
+                                        <CardActionArea onClick={() => handleCardClick(comedian.name, comedian._id)}>
+                                            <CardMedia 
+                                                component="img"
+                                                height="250"
+                                                image={imagePath}
+                                                alt={comedian.name}
+                                            />
+                                            <CardContent>
+                                                <Typography gutterBottom variant="h5" component="div" >
+                                                    {comedian.name}
+                                                </Typography>
+                                                <Typography variant="body2" color="text.secondary" sx={{textAlign:"left"}}>
+                                                    {limitText(comedian.bio, 250)}
+                                                </Typography>
+                                            </CardContent>
+                                            <CardActions>
+                                                <Button size="small" color="primary" href={`/comedians/info/${comedian.name.replace(/\s+/g, '-')}/${comedian._id}`}>See Full Bio</Button>
+                                            </CardActions>
+                                        </CardActionArea>
+                                    </Card>
+                                </div>   
+                            )
+                        })}
+                    </div>
+            </Curtain>
         </div>
     )
 }

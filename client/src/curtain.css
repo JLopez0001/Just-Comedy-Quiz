@@ -1,0 +1,69 @@
+#scene {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+}
+
+#curtain .left,
+#curtain .right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    filter: brightness(130%);  /* Adjust as needed */
+    background-image: url("https://images.freeimages.com/images/large-previews/1ef/red-curtain-1203512.jpg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#curtain .left {
+    left: 0;
+    transform-origin: top right;
+}
+
+#curtain .right {
+    left: 50%;
+    transform-origin: top left;
+}
+
+
+#curtain.open .left {
+	animation-fill-mode: forwards;
+	animation-name: curtain-opening, left-curtain-opening;
+	animation-duration: 2s, 4s;
+	animation-timing-function: ease-in-out, ease-in-out;
+	animation-delay: 0s, 0s;
+	animation-iteration-count: 1, 1;
+	animation-direction: normal, normal;
+}
+#curtain.open .right {
+	animation-fill-mode: forwards;
+	animation-name: curtain-opening, right-curtain-opening;
+	animation-duration: 2s, 4s;
+	animation-timing-function: ease-in-out, ease-in-out;
+	animation-delay: 0s, 0s;
+	animation-iteration-count: 1, 1;
+	animation-direction: normal, normal;
+}
+
+
+/* ANIMATION  */
+
+@keyframes curtain-opening { /* 2s */
+	from { filter: brightness(130%); }
+	to { filter: brightness(100%); }
+}
+
+@keyframes left-curtain-opening { /* 4s */ 
+	from { transform: translate(0) rotate(0) scale(1,1); }
+	to { transform: translate(-100%) rotate(20deg) scale(0,2); }
+}
+
+@keyframes right-curtain-opening { /* 4s */
+	from { transform: translate(0) rotate(0) scale(1,1); }
+	to { transform: translate(100%) rotate(-20deg) scale(0,2); }
+}
+
+
+
