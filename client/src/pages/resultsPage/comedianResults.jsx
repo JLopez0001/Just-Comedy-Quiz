@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from 'react-redux'
 import { useNavigate } from "react-router-dom";
+import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -12,8 +13,8 @@ import Curtain from "../../features/curtain";
 
 const ResultsPage = () => {
 
-    //TODO: Make sure image is centered in card media
-    //TODO: Have results in grid formal hoizontally
+    //TODO: Have an animation that says coming to the stage
+
 
     const navigate = useNavigate();
 
@@ -45,40 +46,54 @@ const ResultsPage = () => {
 
     return (
         <div>
-            <Curtain>
-                    <h1>YOUR COMEDY MATCHES</h1>
-                    <div>
-                        {Array.isArray(topComedians) && topComedians.map(comedian => {
+            <Curtain preAnimationMessage="Now Coming To The Stage">
+                <Typography 
+                    className="title " 
+                    variant="h2"
+                    sx={{m:'40px auto'}}
+                    style={{animation: 'contentAppear 1s ease-out forwards'}}
+                >
+                    YOUR COMEDY MATCHES
+                </Typography>
+                    
+                <Grid container spacing={4} sx={{justifyContent:'center', padding:"50px"}} >
+                    {Array.isArray(topComedians) && topComedians.map(comedian => {
 
-                            const imagePath = getImagePath(comedian.name);
+                        const imagePath = getImagePath(comedian.name);
 
-                            return (
-                                <div>
-                                    <Card sx={{ maxWidth: 345 }}>
-                                        <CardActionArea onClick={() => handleCardClick(comedian.name, comedian._id)}>
-                                            <CardMedia 
-                                                component="img"
-                                                height="250"
-                                                image={imagePath}
-                                                alt={comedian.name}
-                                            />
-                                            <CardContent>
-                                                <Typography gutterBottom variant="h5" component="div" >
-                                                    {comedian.name}
-                                                </Typography>
-                                                <Typography variant="body2" color="text.secondary" sx={{textAlign:"left"}}>
-                                                    {limitText(comedian.bio, 250)}
-                                                </Typography>
-                                            </CardContent>
-                                            <CardActions>
-                                                <Button size="small" color="primary" href={`/comedians/info/${comedian.name.replace(/\s+/g, '-')}/${comedian._id}`}>See Full Bio</Button>
-                                            </CardActions>
-                                        </CardActionArea>
-                                    </Card>
-                                </div>   
-                            )
-                        })}
-                    </div>
+                        return (
+                             
+                            <Grid 
+                                item  
+                                key={comedian._id} 
+                                style={{animation: `contentAppear 1s ease-out forwards`}}
+                            > 
+                                <Card sx={{ maxWidth: 345 }}>
+                                    <CardActionArea onClick={() => handleCardClick(comedian.name, comedian._id)}>
+                                        <CardMedia 
+                                            component="img"
+                                            height="250"
+                                            image={imagePath}
+                                            alt={comedian.name}
+                                        />
+                                        <CardContent>
+                                            <Typography variant="h5" component="div" sx={{textAlign:"left"}}>
+                                                {comedian.name}
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary" sx={{textAlign:"left", marginTop:2}}>
+                                                {limitText(comedian.bio, 250)}
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions>
+                                            <Button size="small" color="primary" href={`/comedians/info/${comedian.name.replace(/\s+/g, '-')}/${comedian._id}`}>See Full Bio</Button>
+                                        </CardActions>
+                                    </CardActionArea>
+                                </Card>
+                        
+                            </Grid>
+                        )
+                    })}
+                </Grid>
             </Curtain>
         </div>
     )
