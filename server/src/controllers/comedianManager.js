@@ -30,7 +30,7 @@ const shaneGillisData = {
     comedy_styles: ["sketch", "dark", "self-deprecating"],
     characteristics: ["edgy", "controversial", "political", "slapstick", "crowd work", "LGBTQ+","TV","impressions"],
     specials: ["Beautiful Dogs", "Shane Gillis Live in Austin"],
-    podcasts: ["Matt and Shane's Secret Podcast", "Kill Tony", "The Joe Rogan Experience", "Flagrant"],
+    podcasts: ["Matt and Shane's Secret Podcast", "Kill Tony", "The Joe Rogan Experience", "Flagrant 2"],
     notable_works: ["Comedy Central Presents: Shane Gillis","Gilly and Keeves", "The Anthony Cumia Show","The Bonfire with Big Jay Oakerson and Dan Soder"],
     bio: "Shane Gillis is a stand-up comic, actor, and writer from Mechanicsburg, Pennsylvania. Shane has also made a name for himself in the comedy world, sharing the stage with renowned comedians such as Joe Rogan, Luis CK, Dave Chappelle, Bill Burr and many others. After winning Philly's Funniest at Helium Comedy Club in 2016 Shane was named an “Up-Next” Comic at Comedy Central’s 2019 Clusterfest in San Francisco and a “New Face” at the prestigious Just For Laughs Comedy Festival in Montreal. ",
     additional_info: {
@@ -130,7 +130,7 @@ const jessicaKirsonData = {
     comedy_styles: ["self-deprecating", "dark", "slap stick"],
     characteristics: ["LGBTQ-friendly", "crowd work", "LGBTQ+", "impressions", "edgy", "musical"],
     specials: ["No Material", "Talking to Myself"],
-    podcasts: ["Kill Tony", "Whiskey Ginger w/ Andrew Santino", "The Joe Rogan Experience", "Your Mom's House", "The Tim Dillon Show" ],
+    podcasts: ["Kill Tony", "Whiskey Ginger", "The Joe Rogan Experience", "Your Mom's House", "The Tim Dillon Show" ],
     notable_works: ["The Comedian's Comedian", "The Howard Stern Show", "The Jim Gaffigan Show"],
     bio:"Jessica Kirson is a powerhouse on stage. She's a hilariously relatable performer of sheer silliness, vulnerability, and ridiculous characters. Her countless comedic character videos have racked up over 200 million views on social media. Her audience is multigenerational, creating an excuse for large groups of friends and families to spend a night out together. In an era where only 10% of all touring comedians are female, Jessica stands out as one of the strongest comedians regardless of gender. As her friend Dave Attell says, 'I'd hate to follow her.'",
     additional_info: {
@@ -150,7 +150,7 @@ const matteoLaneData = {
     comedy_styles: ["observational"],
     characteristics: ["LGBTQ-friendly", "crowd work", "LGBTQ+", "musical", "impressions"],
     specials: ["Matteo Lane: The Advice Special", "Matteo Lane: Hair Plugs & Heartache", "Matteo Lane: The Advice Special Part Two"],
-    podcasts: ["Flagrant",  "We Might Be Drunk Podcast", "Your Mom's House"],
+    podcasts: ["Flagrant 2",  "We Might Be Drunk Podcast", "Your Mom's House"],
     notable_works: ["The Comedy Lineup", "The Late Show with Stephen Colbert"],
     bio: "Named one of Variety's Top Ten Comics to Watch, stand up comedian Matteo Lane performs to sold out crowds all over the world. He has shared the stage with the likes of Chelsea Handler, Aziz Ansari, Hasan Minhaj, and Bob the Drag Queen. Matteo can be seen in Netflix's queer stand up special STAND OUT as well as THE COMEDY LINEUP. A skilled artist and pasta aficionado, Matteo has also painted a mural for the Obamas' headquarters in Chicago and trained as an opera singer in Rome.",
     additional_info: {
@@ -171,7 +171,7 @@ const gabrielIglesiasData = {
     comedy_styles: ["story telling", "clean"],
     characteristics: ["TV", "impressions"],
     specials: ["Stadium Fluffy", "I'm Not Fat... I'm Fluffy", "Hot & Fluffy", "Aloha Fluffy", "I'm Sorry For What I Said When I Was Hungry", "One Show Fits All"],
-    podcasts: ["The Joe Rogan Experience", "SnoopDoggTV", "TigerBelly", "Impulsive", "Whiskey Ginger w/ Andrew Santino"],
+    podcasts: ["The Joe Rogan Experience", "SnoopDoggTV", "TigerBelly", "Impulsive", "Whiskey Ginger"],
     notable_works: ["Mr. Iglesias", "Magic Mike XXL", "The Nut Job", "The Fluffy Movie","Space Jam: A New Legacy"],
     bio: "Iglesias is one of America's most successful stand-up comedians performing to sold-out concerts around the world. He is also one of the most watched comedians on YouTube with almost a billion views and has over 25 million fans across social media. In 2018, Gabe was included in The Hollywood Reporter's “Top 40 Comedy Players” issue alongside comedy giants Jerry Seinfeld, Chris Rock and Lorne Michaels. The comedian has also had the distinct honor of being one of the few to headline and sell-out Madison Square Garden in New York, Staples Center in Los Angeles and Sydney Opera House in Australia. Iglesias is the star and executive producer of Mr. Iglesias, the multi-cam, Netflix original comedy series.",
     additional_info: {
@@ -191,7 +191,7 @@ const joKoyData = {
     comedy_styles: ["clean", "story telling"],
     characteristics: ["TV"],
     specials: ["Live from the LA Forum", "In His Elements", "Comin' in Hot", "Live from Seattle", "Lights Out", "Don't Make Him Angry"],
-    podcasts: ["Flagrant", "Your Mom's House", "This Past Weekend"],
+    podcasts: ["Flagrant 2", "Your Mom's House", "This Past Weekend"],
     notable_works: ["Easter Sunday", "The Monkey King"],
     bio: "As one of today's premiere stand-up comics Jo Koy has come a long way from his modest beginnings performing at a Las Vegas coffee house. The comedian, who pulls inspiration from his family, specifically his son, sells-out arenas and theaters across the world. In 2017, Koy broke a record for the most tickets sold by a single artist at 23,000 tickets and 11 sold-out shows at The Neal S. Blaisdell Concert Hall in Honolulu. In response, the mayor's office in Honolulu proclaimed November 24th as “Jo Koy Day.” The comedian continued his record breaking streak by being the only comedian to sell out 6 shows at The Warfield in San Francisco.",
     additional_info: {
@@ -213,7 +213,7 @@ const aliSiddiqData = {
     comedy_styles: ["story telling", "observational", "dark", "slap stick"],
     characteristics: ["edgy", "controversial"],
     specials: ["The Domino Effect", "The Domino Effect 2", "It's Bigger Than These Bars"],
-    podcasts: ["The Joe Rogan Experience", "Kill Tony", "Are You Garbage?"],
+    podcasts: ["The Joe Rogan Experience", "Kill Tony", "Are You Garbage"],
     notable_works: ["This Is Not Happening", "Laff Mobb's Laff Tracks", "HBO's Def Comedy Jam"],
     bio: "Ali Siddiq is a stand-up comedian and public speaker out of Houston, TX.  Ali's unique style of stand-up began behind the walls of incarceration, an incubator for interesting experiences and good stories.  In 2022, Ali released two new hour specials… THE DOMINO EFFECT on YouTube and UNPROTECTED SETS on EPIX. To date, THE DOMINO EFFECT has over 9 million views, ranking it in the top 5 most watched comedy specials of the last year. People received their first taste of Ali Siddiq when he appeared on HBO's DEF COMEDY JAM and LIVE FROM GOTHAM, and in 2013 he was named Comedy Central's '#1 Comic to Watch'.",
     additional_info: {
