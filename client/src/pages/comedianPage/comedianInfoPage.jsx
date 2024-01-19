@@ -17,8 +17,6 @@ import Button from '@mui/material/Button';
 
 const ComedianInfo = () => {
 
-    //TODO: Add a button to go back to the results page or when they navogate back
-
     const {comedianId} = useParams();
     const [comedian, setComedian] = useState({});
     const navigate = useNavigate();
@@ -102,7 +100,7 @@ const ComedianInfo = () => {
                         Social Media
                     </Typography>
                     
-                    <Stack direction="row" spacing={7} justifyContent="center">
+                    <Stack direction="row" spacing={7} justifyContent="center" sx={{mb:4}}>
                         {comedian.additional_info?.social_media?.twitter && (
                             <SocialMediaLink
                                 className="social-media-icon"
@@ -126,7 +124,12 @@ const ComedianInfo = () => {
                         )}
                     </Stack>
                 </div>
-                <Button onClick={handleResultsClick}>
+                <Button 
+                    onClick={handleResultsClick}
+                    variant="contained" 
+                    size="large" 
+                    sx={{bgcolor:"#fd2eb3",'&:hover': {bgcolor: '#ff57c4'}}}
+                >
                     Go Back To Your Results
                 </Button>
             </Paper>
