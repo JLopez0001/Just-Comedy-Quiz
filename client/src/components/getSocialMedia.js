@@ -1,12 +1,12 @@
 import React from 'react';
-import Link from '@mui/material/Link';
+import Button from '@mui/material/Button';
 
-const SocialMediaLink = ({icon, url}) => {
-    if(!url) return null;
+const SocialMediaLink = ({icon, onClick}) => {
+    // if(!url) return null;
     return (
-        <Link href={url} >
-          {icon}
-        </Link>
+      <Button onClick={onClick}>
+        {icon}
+      </Button>
     ) 
 }
 

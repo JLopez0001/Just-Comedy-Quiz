@@ -39,6 +39,10 @@ const ComedianInfo = () => {
         navigate('/comedians/results');
     }
 
+    const openInNewTab = (url) => {
+        window.open(url, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <div className="brick-wall-background-image">
             <Paper elevation={1} sx={{
@@ -57,7 +61,11 @@ const ComedianInfo = () => {
 
                     {comedian.additional_info && comedian.additional_info.website && (
                         <Typography variant="h6" >
-                            <Link href={comedian.additional_info.website} underline="hover"  sx={{ color: "#ff57c4" }}>
+                            <Link 
+                                onClick={() => openInNewTab(comedian.additional_info.website)} 
+                                underline="hover"  
+                                sx={{ color: "#ff57c4" }}
+                            >
                                 <LinkIcon 
                                     sx={{ transform: 'rotate(-45deg)', 
                                     marginRight: 1, color: "#ff57c4" 
@@ -104,22 +112,22 @@ const ComedianInfo = () => {
                         {comedian.additional_info?.social_media?.twitter && (
                             <SocialMediaLink
                                 className="social-media-icon"
-                                icon={<TwitterIcon fontSize="large"  sx={{ color: "#ff57c4" }}/>} 
-                                url={comedian.additional_info.social_media.twitter} 
+                                icon={<TwitterIcon fontSize="large"  sx={{ color: "#ff57c4" }}/>}
+                                onClick={() => openInNewTab(comedian.additional_info.social_media.twitter)}
                             />
                         )}
                         {comedian.additional_info?.social_media?.instagram && (
                             <SocialMediaLink 
                                 className="social-media-icon"
                                 icon={<InstagramIcon fontSize="large" sx={{ color:"#ff57c4" }}/>} 
-                                url={comedian.additional_info.social_media.instagram} 
+                                onClick={() => openInNewTab(comedian.additional_info.social_media.instagram)}
                             />
                         )}
                         {comedian.additional_info?.social_media?.youtube && (
                             <SocialMediaLink 
                                 className="social-media-icon"
                                 icon={<YouTubeIcon fontSize="large"  sx={{ color: "#ff57c4" }}/>} 
-                                url={comedian.additional_info.social_media.youtube} 
+                                onClick={() => openInNewTab(comedian.additional_info.social_media.youtube)}
                             />
                         )}
                     </Stack>
