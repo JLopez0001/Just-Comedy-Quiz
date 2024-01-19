@@ -13,9 +13,6 @@ import Curtain from "../../features/curtain";
 
 const ResultsPage = () => {
 
-    //TODO: Have an animation that says coming to the stage
-
-
     const navigate = useNavigate();
 
 
@@ -41,8 +38,6 @@ const ResultsPage = () => {
     const handleCardClick = (comedianName, comedianID) => {
         navigate(`/comedians/info/${comedianName.replace(/\s+/g, '-')}/${comedianID}`);
     };
-
-
 
     return (
         <div>
@@ -94,6 +89,15 @@ const ResultsPage = () => {
                         )
                     })}
                 </Grid>
+                <Button 
+                    style={{animation: 'contentAppear 1s ease-out forwards'}}
+                    variant="contained" 
+                    size="large" 
+                    onClick={() => navigate('/questions/comedian-quiz')} 
+                    sx={{bgcolor:"#fd2eb3",'&:hover': {bgcolor: '#ff57c4'}}}
+                > 
+                    Retake Quiz 
+                </Button>
             </Curtain>
         </div>
     )
