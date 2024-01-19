@@ -89,8 +89,8 @@ const msPatData = {
     gender: "Female",
     comedy_styles: ["sketch", "dark"],
     characteristics: ["edgy", "controversial", "TV"],
-    specials: ["Y'All Wanna Hear Something Crazy"],
-    podcasts: ["The PatDown with Ms.Pat", "The Joe Rogan Experience", "This Past Weekend", "The Church Of What's Happening Now", "The Breakfast Club"],
+    specials: ["Y'All Wanna Hear Something Crazy", "This Is Not Happening"],
+    podcasts: ["The PatDown", "The Joe Rogan Experience", "This Past Weekend", "The Church Of What's Happening Now", "The Breakfast Club"],
     notable_works: ["Rabbit","The Ms. Pat Show", "Ms. Pat Settles it "],
     bio: "Declared by The Washington Post as “unforgiving and darkly hilarious,” and The New York Times as “brutally honest and outrageous,” Patricia Williams (aka Ms. Pat) is a comedian, author, radio host, podcaster, and actress who brings a raw, in your face, and hilarious perspective to her work. With an Emmy-nominated multi-cam series based on her own life, an overall deal with BET/Paramount Global, her popular first Netflix hour streaming, and sold-out standup shows nationwide, Ms. Pat is headed for comedy superstardom.",
     additional_info: {
