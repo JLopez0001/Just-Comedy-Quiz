@@ -46,7 +46,11 @@ const ComedianInfo = () => {
     return (
         <div className="brick-wall-background-image">
             <Paper elevation={1} sx={{
-                maxWidth: 900, 
+                width: {
+                    lg: '950px',
+                    md: '750px', 
+                    sm: '550px',
+                }, 
                 m: '60px auto 30px', 
                 p: '20px', 
                 backgroundColor: 'rgba(0, 0, 0, 0.6)', 
@@ -77,7 +81,7 @@ const ComedianInfo = () => {
                         </Typography>
                     )}
 
-                    <Typography variant="h6" component="div" sx={{textAlign:"left", mt: 6, mb:6, p:3}}>
+                    <Typography variant="h6" component="div" sx={{textAlign:"left", mt: 4, mb:2, p:3}}>
                         {comedian.bio}
                     </Typography>
                     
@@ -104,7 +108,7 @@ const ComedianInfo = () => {
 
                 
                 <div>
-                    <Typography variant="h5" sx={{mt:6, mb:3}} className="title">
+                    <Typography variant="h5" sx={{mt:8, mb:3}} className="title">
                         Social Media
                     </Typography>
                     

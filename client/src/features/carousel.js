@@ -37,7 +37,7 @@ const Carousel = ({ podcasts, notableWorks }) => {
 
     return  (
         <div>
-            <Typography variant="h5" component="div" className="">
+            <Typography variant="h4" sx={{mt:5, mb:6}} className="title">
                 Podcast Appearances 
             </Typography>
             <div className="scroller" data-speed="slow">
@@ -50,14 +50,14 @@ const Carousel = ({ podcasts, notableWorks }) => {
                 </div>
             </div>
 
-            <Typography variant="h5" component="div" className="">
+            <Typography variant="h4" sx={{mt: 6, mb:6}} className="title">
                 Notable Works
             </Typography>
             <div className="scroller" data-direction="right" data-speed="slow">
                 <div className="inner-scroller">
                     {notableWorks && notableWorks.map((work, index) => (
                         <div key={index}>
-                            <Typography component="ul"variant="body1">
+                            <Typography component="ul"variant="h6">
                                 {work}
                             </Typography>
                         </div>
