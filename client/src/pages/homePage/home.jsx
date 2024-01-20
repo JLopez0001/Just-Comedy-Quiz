@@ -13,20 +13,23 @@ const HomePage = () => {
                     className='title'
                     variant="h1" 
                     sx={{
+                        p: 1,
                         m:"60px auto 20px auto",
                         fontWeight: "bold",
+                        fontSize: { xs: '3rem', sm: '3.5rem', md: '4rem', lg: '5rem' }
                     }}>
                     Explore The World of Comedy
                 </Typography>
             </div>
             
-            <div className='title'>
+            <div className='title sub-content'>
                 <Typography 
                     variant="h5" 
                     component="p" 
                     sx={{
-                        m: " 310px auto 30px auto",
-                        fontSize: "1.8rem",
+                        m: " 350px auto 10px auto",
+                        p: 3,
+                        fontSize: { xs: '1rem', sm: '1.6rem', md: '1.7rem', lg: '2rem' },
                         fontWeight: "bold",
                     }}>
                     Take Our Quiz and Meet Your New Favorite Comedians!
