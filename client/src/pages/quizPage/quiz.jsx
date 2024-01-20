@@ -69,7 +69,12 @@ const QuizPage = () => {
             <Typography 
                 className="title" 
                 variant="h2"
-                sx={{m:'40px auto'}}
+                sx={{
+                    p: 1,
+                    m:'40px auto',
+                    fontSize: { xs: '2.4rem', sm: '3rem', md: '3rem', lg: '4rem' },
+
+                }}
             >
                 FIND YOUR FLAVOR OF COMEDY
              </Typography>
@@ -78,9 +83,16 @@ const QuizPage = () => {
                 <div className="quiz-component">
                    <Paper 
                     elevation={24} 
+                    
                     square={false} 
                     sx={{
-                        width: currentQuestion.answers.length > 4 ? '650px' : '450px', 
+                        width: {
+                            lg: currentQuestion.answers.length > 4 ? '650px' : '450px',
+                            md: '550px', 
+                            sm: '450px',
+                            xs: '350px', 
+                        }, 
+                        backgroundColor: '#f7f7f7',
                         margin: '90px auto',
                         boxShadow: '0px 0px 30px 8px rgba(0, 0, 0, 0.9)'
                     }}> 
@@ -97,15 +109,15 @@ const QuizPage = () => {
                         />
 
                     <div className="next-button">
-                        {/* {currentQuestionIndex < questions.length - 1 ? ( */}
+                        {currentQuestionIndex < questions.length - 1 ? (
                             <Button variant="contained" disabled={!isAnswerSelected} size="large"  onClick={handleNextQuestion} sx={{bgcolor:"#fd2eb3",'&:hover': {bgcolor: '#ff57c4'}}}>
                                 Next
                             </Button>
-                        {/* ) : ( */}
-                            <Button variant="contained"  onClick={onSubmit}>
+                        ) : (
+                            <Button variant="contained"  onClick={onSubmit}  sx={{bgcolor:"#fd2eb3",'&:hover': {bgcolor: '#ff57c4'}}}>
                                 Submit
                             </Button>
-                        {/* )} */}
+                        )} 
                     </div>
                     </Paper>
                 </div>

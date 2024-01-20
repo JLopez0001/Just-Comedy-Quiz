@@ -32,7 +32,7 @@ const QuizQuestions = ({question, answers, questionID, type, onAnswerChange, cur
                     Question {currentQuestion + 1} /{totalQuestions} 
                 </Typography>
               
-                <Typography variant="h5" className="question-text">
+                <Typography variant="h5" className="question-text" sx={{}}>
                     {question}
                 </Typography>
 
@@ -40,21 +40,26 @@ const QuizQuestions = ({question, answers, questionID, type, onAnswerChange, cur
                     <Typography variant="body1"  sx={{fontWeight: "light"}}>(Select all that apply)</Typography> : null}
 
             </div>
-            <FormControl required component="fieldset" fullWidth>
+            <FormControl required component="fieldset"  >
                 <RadioGroup
                     aria-label={`answerChoices_${questionID}`}
                     value={type === 'single-choice' ? answerChoices[0] : ''}
                     row={false}
                 >
-                    <Grid container spacing={3}>
+                    <Grid container spacing={3} sx={{p:2}}>
                         {answers.map((answer, index) => (
                             <Grid item xs={12} sm={answers.length > 4 ? 6 : 12} key={index} >
                                 <FormControlLabel
-                                    className={`answer-choice ${answerChoices.includes(answer) ? 'selected-answer' : ''}`}
+                                    id='answer'
+                                    className= {`answerboo answer-choice ${answerChoices.includes(answer) ? 'selected-answer' : ''}`}
                                     value={answer}
-                                    control={type === 'single-choice' ? <Radio /> : <Checkbox checked={answerChoices.includes(answer)} />}
+                                    control={type === 'single-choice' ? 
+                                        <Radio sx={{'&.Mui-checked': {color:'#ff57c4'}}}/> 
+                                        : 
+                                        <Checkbox checked={answerChoices.includes(answer)} sx={{'&.Mui-checked': {color: '#ff57c4',}}}/>
+                                    }
                                     label={
-                                        <Typography variant="h6" >
+                                        <Typography variant="h6" sx={{ fontSize: { xs: '1rem', sm: '1.1rem', md: '1.1rem' } }} >
                                             {answer}
                                         </Typography>
                                     }
