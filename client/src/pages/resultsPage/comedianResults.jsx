@@ -64,7 +64,15 @@ const ResultsPage = () => {
                                 style={{animation: `contentAppear 1s ease-out forwards`}}
                             > 
                                 <Card sx={{ maxWidth: 345 }}>
-                                    <CardActionArea onClick={() => handleCardClick(comedian.name, comedian._id)}>
+                                    <CardActionArea 
+                                        onClick={() => handleCardClick(comedian.name, comedian._id)} 
+                                        sx={{
+                                            '&:hover': {
+                                                backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                                                transition: 'background-color 0.3s ease-in-out'
+                                            }
+                                        }}
+                                    >
                                         <CardMedia 
                                             component="img"
                                             height="250"
@@ -80,7 +88,14 @@ const ResultsPage = () => {
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Button size="small" color="primary" href={`/comedians/info/${comedian.name.replace(/\s+/g, '-')}/${comedian._id}`}>See Full Bio</Button>
+                                            <Button 
+                                                sx={{m:'0 auto', fontWeight:'bold'}}
+                                                size="small" 
+                                                color="primary" 
+                                                href={`/comedians/info/${comedian.name.replace(/\s+/g, '-')}/${comedian._id}`}
+                                            >
+                                                See Full Bio
+                                            </Button>
                                         </CardActions>
                                     </CardActionArea>
                                 </Card>

@@ -25,12 +25,25 @@ const Curtain = ({ children, preAnimationMessage }) => {
             </div>
             {showPreMessage && (
                 <div className="pre-animation-message">
-                    <Typography variant="h1" style={{ textAlign: 'center' }}>
-                    {preAnimationMessage}
+                    <Typography 
+                        variant="h1" 
+                        className="title" 
+                        sx={{ 
+                            textAlign: 'center',
+                            animation: 'contentAppear 1s ease-out forwards', 
+                            fontWeight:'bold',
+                            fontSize: { xs: '2rem', sm: '3rem', md: '4rem', lg: '5rem' }
+                            }}
+                        >
+                        {preAnimationMessage}
                     </Typography>
                 </div>
             )}
-            {showContent && children}
+            {showContent && (
+                <div className="content-container">
+                    {children}
+                </div>
+            )}
         </div>
     );
 };
