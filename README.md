@@ -31,6 +31,8 @@ npm start # For Front End
 # Open in your browser
 open http://localhost:3001
 
+```
+
 # Deep Dive In Our Web App
 
 ## Landing Page
@@ -48,4 +50,3 @@ open http://localhost:3001
 ## Profile Page
 
 ![Profile Page](client/public/images/wireFrame/profile-page.png "Profile Page")
-```
