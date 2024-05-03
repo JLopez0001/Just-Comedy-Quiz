@@ -11,10 +11,10 @@ const HomePage = () => {
             className="title"
             variant="h1"
             sx={{
-              p: 1,
+              p: 3,
               m: "160px auto 20px auto",
               fontWeight: "bold",
-              fontSize: { xs: "3rem", sm: "3.5rem", md: "4rem", lg: "5rem" },
+              fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4rem", lg: "5rem" },
             }}
           >
             Explore The World of Comedy
@@ -23,12 +23,18 @@ const HomePage = () => {
 
         <div className="title sub-content">
           <Typography
+            className="sub-title"
             variant="h5"
             component="p"
             sx={{
               m: " 200px auto 10px auto",
               p: 3,
-              fontSize: { xs: "1rem", sm: "1.6rem", md: "1.7rem", lg: "2rem" },
+              fontSize: {
+                xs: "1.5rem",
+                sm: "1.6rem",
+                md: "1.7rem",
+                lg: "2rem",
+              },
               fontWeight: "bold",
             }}
           >
