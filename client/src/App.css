@@ -23,6 +23,10 @@ body {
   text-shadow: 3px 3px 20px black, 2px 2px 10px orange, 0 0 20px red;
 }
 
+.boo {
+  display: flex;
+}
+
 .question-wrapper {
   text-align: left;
   padding: 20px 20px;
@@ -45,18 +49,18 @@ body {
   width: 185px;
 }
 
-@media (min-width: 1200px) {
-  .answer-choice {
-    width: 250px;
-  }
-}
-
 .selected-answer {
   border: 4px solid #fd2eb3; /* consider the ff57c4 color */
 }
 
 .next-button {
   padding: 15px 0;
+}
+
+@media (min-width: 1200px) {
+  .answer-choice {
+    width: 250px;
+  }
 }
 
 /* IMAGES BACKGROUND */
@@ -68,7 +72,22 @@ body {
   height: 100vh;
 }
 
-@media (max-width: 818px) {
+.secondary-background-image {
+  background-image: url("../public/images/backgroundImages/secondary-stage.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Ensures at least full viewport height */
+}
+
+.brick-wall-background-image {
+  background-image: url("../public/images/backgroundImages/brick-wall.jpg");
+  background-size: cover; /* cover ensures that the background covers the entire container */
+  background-position: center;
+  min-height: 100vh; /* Ensures at least full viewport height */
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 844px) {
   .main-background-image {
     background-image: url("../public/images/backgroundImages/brick-wall.jpg"); /* Change to brick wall background for mobile */
     background-size: cover;
@@ -81,13 +100,6 @@ body {
   }
 }
 
-.secondary-background-image {
-  background-image: url("../public/images/backgroundImages/secondary-stage.jpg");
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh; /* Ensures at least full viewport height */
-}
-
 @media (max-width: 1000px) {
   .secondary-background-image {
     background-image: url("../public/images/backgroundImages/brick-wall.jpg"); /* Change to brick wall background for mobile */
@@ -95,12 +107,4 @@ body {
     background-position: center;
     min-height: 100vh; /* Ensures at least full viewport height */
   }
-}
-
-.brick-wall-background-image {
-  background-image: url("../public/images/backgroundImages/brick-wall.jpg");
-  background-size: cover; /* cover ensures that the background covers the entire container */
-  background-position: center;
-  min-height: 100vh; /* Ensures at least full viewport height */
-  background-repeat: no-repeat;
 }
