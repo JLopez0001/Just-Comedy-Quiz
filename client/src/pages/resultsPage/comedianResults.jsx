@@ -44,7 +44,7 @@ const ResultsPage = () => {
         <Typography
           className="title "
           variant="h2"
-          sx={{ m: "30px auto" }}
+          sx={{ fontSize: { xs: "2rem" }, m: "30px auto" }}
           style={{ animation: "contentAppear 1s ease-out forwards" }}
         >
           YOUR COMEDY MATCHES

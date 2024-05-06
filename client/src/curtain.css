@@ -1,16 +1,23 @@
 #scene {
   position: relative;
-  overflow: hidden; /* Prevent any scrolling due to internal content overflow */
+  overflow: hidden;
   width: 100%;
-  height: 100vh; /* Ensure it fits exactly in the viewport */
+  height: 100vh;
+  /* overflow: auto; */
   background-color: black;
+}
+
+@media (max-width: 430px) {
+  #scene {
+    overflow: auto; /* Enables scrolling on iPhone 12 Pro and smaller devices */
+  }
 }
 
 .content-container {
   padding: 20px;
-  height: calc(100vh - 40px); /* Adjust height considering padding */
-  background-color: black; /* Keep consistent background color */
-  overflow: hidden; /* Hide overflow to prevent scrolling */
+  height: auto;
+  background-color: black; /* Prevent scrolling inside the scene */
+  overflow: auto; /*  Allow scrolling within content container*/
 }
 
 #curtain .left,
