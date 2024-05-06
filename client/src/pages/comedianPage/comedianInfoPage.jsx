@@ -87,7 +87,7 @@ const ComedianInfo = () => {
           <Typography
             variant="h6"
             component="div"
-            sx={{ textAlign: "left", mt: 4, mb: 2, p: 3 }}
+            sx={{ textAlign: "center", mt: 4, mb: 2, p: 1 }}
           >
             {comedian.bio}
           </Typography>
